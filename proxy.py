@@ -120,7 +120,6 @@ def client_handler(client_socket: socket.socket, client_address: tuple[str, int]
         print(f"{client_prefix} Connected established")
         while True:
             # Receive data from the client
-            
             data = client_socket.recv(8192)
             
             if not data:
@@ -157,6 +156,7 @@ def client_handler(client_socket: socket.socket, client_address: tuple[str, int]
                 # Send the response back to the client
                 client_socket.sendall(response)
                 client_socket.close()
+                break
                 
             except Exception as e:
                 print(f"Unexpected server error: {e}")

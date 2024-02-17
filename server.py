@@ -147,6 +147,7 @@ def client_handler(client_socket: socket.socket, client_address: tuple[str, int]
 
                 client_socket.sendall(response)
                 client_socket.close()
+                break
 
             except Exception as e:
                 print(f"Unexpected server error: {e}")
